@@ -101,10 +101,10 @@ function viewItems() {
                         <p>Description: ${item_storage[i].des}</p>
                     </div>
                     <p>Date: ${item_storage[i].date}</p>
-                    <button class="edit-button" data-bs-toggle="modal" data-bs-target="#editmodal_${i}" data-index="${i}"><img src="icons8-edit-24.png" alt="show" srcset="">
+                    <button class="edit-button" data-bs-toggle="modal" data-bs-target="#editmodal_${i}" data-index="${i}"><img src="..images/icons8-edit-24.png" alt="show" srcset="">
                     </button>
-                    <button class="delete-button" data-index="${i}" onclick="del(this, ${i})"><img src="icons8-delete-24.png" alt="show" srcset=""></button> 
-                    <button class="view-button" data-bs-toggle="modal" data-index="${i}" data-bs-target="#viewmodal_${i}"><img src="icons8-view-24.png" alt="show" srcset=""></button> 
+                    <button class="delete-button" data-index="${i}" onclick="del(this, ${i})"><img src="..images/icons8-delete-24.png" alt="show" srcset=""></button> 
+                    <button class="view-button" data-bs-toggle="modal" data-index="${i}" data-bs-target="#viewmodal_${i}"><img src="..images/icons8-view-24.png" alt="show" srcset=""></button> 
 
                     </div>
             </div>
