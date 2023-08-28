@@ -101,10 +101,12 @@ function viewItems() {
                         <p>Description: ${item_storage[i].des}</p>
                     </div>
                     <p>Date: ${item_storage[i].date}</p>
-                    <button class="edit-button" data-bs-toggle="modal" data-bs-target="#editmodal_${i}" data-index="${i}"><img src="..images/icons8-edit-24.png" alt="show" srcset="">
+                    <button class="edit-button" data-bs-toggle="modal" data-bs-target="#editmodal_${i}" data-index="${i}"><img src="./images/icons8-edit-24.png" alt="show" srcset="">
                     </button>
-                    <button class="delete-button" data-index="${i}" onclick="del(this, ${i})"><img src="..images/icons8-delete-24.png" alt="show" srcset=""></button> 
-                    <button class="view-button" data-bs-toggle="modal" data-index="${i}" data-bs-target="#viewmodal_${i}"><img src="..images/icons8-view-24.png" alt="show" srcset=""></button> 
+                    <button class="delete-button" data-index="${i}" onclick="del(this, ${i})"><img src="./images/icons8-delete-24.png" alt="show" srcset="">
+                    </button> 
+                    <button class="view-button" data-bs-toggle="modal" data-index="${i}" data-bs-target="#viewmodal_${i}"><img src="./Images/icons8-view-24.png" alt="show" srcset="">
+                    </button> 
 
                     </div>
             </div>
@@ -131,7 +133,7 @@ function viewItems() {
             </div>
 
 
-            <!-- Edit modal -->
+            <!-- view modal -->
             <div class="modal" id="viewmodal_${i}" >
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -197,6 +199,30 @@ function del(e, indexToRemove){
     viewItems()
 }
 
+function displayItems(filterdItems){
+  let search_bar = document.getElementById('Search')
+  let list = document.getElementById("items_list")
+
+  list.innerHTML = "";
+
+  for (const item of filterdItems) {
+    const li = document.createElement("li")
+    li.textContent = item;
+    list.appendChild(li);
+  }
+}
+
+function seacrhItems(query) {
+    const item_storage = JSON.parse(localStorage.getItem("item")) || [];
+
+    const filterdItems = item_storage.fiilter(item => (
+        item.toLowerCase().includes(query.toLowerCase())
+    ));
+    displayItems(filterdItems);
+}
+
+//Initial display
+seacrhItems("");//To display all items
 //Attach evet listeners to delete button using i to track them
 // function eventToDeleteButtons(){
 //     let deleteButtons = document.getElementsByClassName('delete-button');

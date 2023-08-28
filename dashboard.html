@@ -12,48 +12,59 @@
     <title>Document</title>
 </head>
 
-<body class="dash">
+<body>
 
+    
     <div class="header">
         <div class="content">
             <div class="search">
                 <input type="text" placeholder="Search.." id="Search">
-
+                <ul id="items_list"></ul>
             </div>
 
             <div class="items">
-                <button id="myBtn">New Item</button>
+                <button id="myBtn" type="button" class="btn btn-dark">New Item</button>
+
             </div>
             
+          
         </div>
 
-        <div id="cardContainer"></div>
-
+       
+    </div>
+    <br><br><br>
+    <div id="show_duties">
 
     </div>
+
+    
+   
     <br><br><br><br>
     <div class="card_buttons">
        
     </div>
     <br><br><br>
     
-    <div id="show_duties">
+    
 
-    </div>
-    <!-- The Modal -->
     <div id="myModal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content">
-            
-            <span class="close">&times;</span>
-            <input type="text" id="title" placeholder="Title"><br>
-            <input type="text" id="description" placeholder="Description"><br>
-            <input type="date" id="date"><br>
-            <button type="submit" id="button" onclick="createItem()"></button>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">New Item</h5>
+                </div>
+                <div class="modal-body">
+                    <span class="close">&times;</span>
+                    <input type="text" class="title" id="title" placeholder="Title"><br>
+                    <input type="text" class="description" id="description" placeholder="Description"><br>
+                    <input type="date" class="date" id="date"><br>                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="button" onclick="createItem()">Save</button>
+                </div>
+            </div>
         </div>
     </div>
-
     
 
     

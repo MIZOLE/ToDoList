@@ -1,11 +1,17 @@
 body {
     /* background-color: #3dc291; */
-    padding-left: 8em;
-    padding-right: 8em;
+    /* padding-left: 8em;
+    padding-right: 8em; */
+    background-color: #fefefe;
+    text-align: center;
 }
 .Search {
 padding-left: 10em;
 }
+/* 
+.title {
+    width: 3em;
+} */
 h3 {
     text-align: center;
 }
@@ -78,32 +84,36 @@ button {
 /* Create a new modal*/
 
 .modal {
-    display: none; /* Hidden by default */
+    display: flex; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: #8da25d;
+    background-color: whitesmoke;
+
+}
+
+
+.cont {
+    width: 50%; /* Could be more or less, depending on screen size */
 }
 
   /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: yellow;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
   }
 
   /* The Close Button */
 .close {
-    color: #aaa;
+    color: yellow;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    align-items: center;
   }
   
   .close:hover,
@@ -146,7 +156,7 @@ button {
 .items {
     position: absolute;
     right: 15em; 
-    background-color: black;
+    /* background-color: black; */
     /* margin-right: 5em; */
 }
 
@@ -154,9 +164,11 @@ button {
 
 .show_duties {
     display: flex;
-    margin-bottom: 15em;  
-    padding-bottom: 15em;
-
+    margin-bottom: 25em;  
+    padding-bottom: 25em;
+    background-color: #aaa;
+    justify-content: center;
+    align-items: center;
 }
 
 .description_ {
@@ -165,20 +177,15 @@ button {
     text-overflow: ellipsis;
 }
 
-.card {
-    display: flex;
-    padding-bottom: 4em;
-}
-
 .header {
     padding: 60px;
   text-align: center;
   background: whitesmoke;
   color: white;
   font-size: 30px;
-  width: 40em;  
 }
 
 .card_buttons {
     display: flex;
 }
+
