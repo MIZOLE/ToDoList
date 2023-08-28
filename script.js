@@ -218,7 +218,8 @@ function seacrhItems(query) {
     const filterdItems = item_storage.fiilter(item => (
         item.toLowerCase().includes(query.toLowerCase())
     ));
-    displayItems(filterdItems);
+    displayItems(
+        filterdItems);
 }
 
 //Initial display
