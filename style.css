@@ -188,4 +188,8 @@ button {
 .card_buttons {
     display: flex;
 }
+ 
+.items_list {
+    color: black;
+}
 

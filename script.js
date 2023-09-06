@@ -199,31 +199,38 @@ function del(e, indexToRemove){
     viewItems()
 }
 
-function displayItems(filterdItems){
-  let search_bar = document.getElementById('Search')
-  let list = document.getElementById("items_list")
 
-  list.innerHTML = "";
+function displayItems(filteredItems) {
 
-  for (const item of filterdItems) {
-    const li = document.createElement("li")
-    li.textContent = item;
-    list.appendChild(li);
-  }
+    const itemList = document.getElementById("items_list");
+
+    
+    itemList.innerHTML = "";
+
+    for (const item of filteredItems) {
+        const li = document.createElement("li");
+        li.textContent = item.Title; // Replace "Title" with the property you want to display
+        itemList.appendChild(li);
+    }
 }
 
-function seacrhItems(query) {
+function searchItems(query) {
     const item_storage = JSON.parse(localStorage.getItem("item")) || [];
-
-    const filterdItems = item_storage.fiilter(item => (
-        item.toLowerCase().includes(query.toLowerCase())
-    ));
-    displayItems(
-        filterdItems);
+    const filteredItems = item_storage.filter(item =>
+        item.Title.toLowerCase().includes(query.toLowerCase()) // Replace "Title" with the property you want to search
+    );
+    displayItems(filteredItems);
 }
 
-//Initial display
-seacrhItems("");//To display all items
+let searchInput = document.getElementById("Search");
+
+searchInput.addEventListener("input", function () {
+    const query = searchInput.value;
+    searchItems(query);
+});
+
+// Initial display
+searchItems(""); // To display all items initially
 //Attach evet listeners to delete button using i to track them
 // function eventToDeleteButtons(){
 //     let deleteButtons = document.getElementsByClassName('delete-button');
